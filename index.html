@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#294536">
+<title>Manak na Galang｜故事繪本</title>
+<style>
+:root{--forest:#294536;--leaf:#597354;--gold:#d9ad62;--cream:#fff9ed;--ink:#26372c;--muted:#788274}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;background:linear-gradient(145deg,#e9efdf,#f8efdc);min-height:100vh}
+button{font:inherit;cursor:pointer}.wrap{max-width:1120px;margin:auto;padding:0 24px}
+header{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;letter-spacing:.13em;color:var(--forest)}.logo small{display:block;font-size:10px;letter-spacing:.24em;color:var(--leaf);margin-top:3px}
+.navbtn,.softbtn{border:1px solid #aab59e;background:#ffffffa8;color:var(--forest);border-radius:999px;padding:10px 17px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:48px 0 68px}
+.kicker{font-size:12px;letter-spacing:.25em;color:var(--leaf);font-weight:900}
+h1{font-family:Georgia,serif;font-size:clamp(43px,6vw,70px);line-height:1.02;margin:16px 0;color:var(--forest)}
+.intro{line-height:1.95;color:#647262;max-width:460px;font-size:16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.start{border:0;background:var(--forest);color:white;border-radius:999px;padding:14px 24px;box-shadow:0 8px 20px #29453630}.start:hover{background:#3b6148}
+.cover{position:relative;max-width:500px;margin:auto;background:var(--cream);padding:12px;border-radius:20px;box-shadow:0 22px 55px #35452b25;transform:rotate(1.5deg)}
+.cover img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;border-radius:12px}.cover figcaption{text-align:center;padding:15px 6px 7px;font-weight:800;letter-spacing:.1em}
+.leaf{position:absolute;font-size:28px;color:#81946d;opacity:.6}.leaf.one{top:-22px;right:22px}.leaf.two{bottom:28px;left:-23px}
+.section{padding:15px 0 70px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:22px}.sectionhead h2{font-size:28px;margin:7px 0 0;color:var(--forest)}.sectionhead p{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.thumb{border:0;text-align:left;background:#fffdf7;padding:8px;border-radius:14px;color:var(--ink);box-shadow:0 7px 22px #39462b12;transition:.2s}.thumb:hover{transform:translateY(-5px);box-shadow:0 14px 30px #39462b22}.thumb img{display:block;width:100%;aspect-ratio:1.2;object-fit:cover;border-radius:9px}.thumb span{display:block;padding:10px 4px 4px;font-weight:800;font-size:13px}
+footer{text-align:center;padding:28px 12px 40px;color:#77816e;font-size:12px;letter-spacing:.08em}
+.reader{display:none;position:fixed;inset:0;z-index:5;background:#17251eef;padding:16px;align-items:center;justify-content:center}.reader.show{display:flex}
+.panel{width:min(100%,1000px);max-height:96vh;overflow:auto;background:var(--cream);border-radius:20px;padding:15px;box-shadow:0 24px 80px #0007}
+.rhead{display:flex;align-items:center;justify-content:space-between;padding:0 3px 12px}.rhead strong{color:var(--forest);letter-spacing:.1em}.close{border:0;width:38px;height:38px;border-radius:50%;font-size:23px;background:#ece5d6;color:var(--forest)}
+.stage{display:grid;grid-template-columns:54px minmax(0,1fr) 54px;gap:12px;align-items:center}.arrow{border:0;width:48px;height:48px;border-radius:50%;background:var(--forest);color:white;font-size:28px}.arrow:disabled{opacity:.25;cursor:not-allowed}
+.pageimg{display:block;width:100%;max-height:65vh;object-fit:contain;background:#eee4d1;border-radius:10px}
+.controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:14px 3px 4px}.control{border:1px solid #c9c2b1;background:#fffdf6;color:var(--forest);padding:9px 13px;border-radius:999px;font-size:13px}.control.active{background:#e1eadb;border-color:#8ca084}.count{font-size:13px;color:var(--muted);white-space:nowrap}.bar{height:5px;background:#e7dfce;border-radius:9px;overflow:hidden;flex:1;min-width:60px}.bar i{height:100%;width:5%;display:block;background:var(--gold);transition:width .25s}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:30px;padding:25px 0 50px}.cover{max-width:430px}.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:450px){.wrap{padding:0 16px}.grid{grid-template-columns:repeat(2,1fr);gap:12px}.sectionhead{align-items:start;flex-direction:column}.stage{grid-template-columns:34px minmax(0,1fr) 34px;gap:5px}.arrow{width:32px;height:38px;font-size:22px}.panel{padding:10px}.pageimg{max-height:57vh}.reader{padding:7px}}
+</style>
+</head>
+<body>
+<header class="wrap"><div class="logo">STORY GARDEN<small>AN ILLUSTRATED STORYBOOK</small></div><button class="navbtn" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">瀏覽故事頁面 ↓</button></header>
+<main class="wrap">
+<section class="hero">
+ <div><div class="kicker">A JOURNEY THROUGH THE PICTURES</div><h1>Manak na<br>Galang</h1>
+ <p class="intro">歡迎來到繪本小屋。跟著故事中的人物走進森林，透過一幅幅圖畫，慢慢發現故事裡的奇妙旅程。點選開始閱讀，還可以聆聽每一頁的語音。</p>
+ <div class="actions"><button class="start" onclick="openBook(0)">開始閱讀　→</button><button class="softbtn" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">選擇故事頁</button></div></div>
+ <figure class="cover"><span class="leaf one">✦</span><img src="assets/graphics/0.jpg" alt="繪本封面"><figcaption>每一張圖，都是故事的一扇窗</figcaption><span class="leaf two">✧</span></figure>
+</section>
+<section class="section" id="story"><div class="sectionhead"><div><div class="kicker">TURN THE PAGE</div><h2>故事頁面</h2></div><p>選擇任一張圖片，進入閱讀模式</p></div><div class="grid" id="grid"></div></section>
+</main>
+<footer>STORY GARDEN · READ, LISTEN & IMAGINE</footer>
+<div class="reader" id="reader" role="dialog" aria-modal="true" aria-label="繪本閱讀器"><div class="panel">
+ <div class="rhead"><strong>MANAK NA GALANG　｜　閱讀模式</strong><button class="close" onclick="closeBook()" aria-label="關閉">×</button></div>
+ <div class="stage"><button class="arrow" id="prev" onclick="turn(-1)" aria-label="上一頁">‹</button><img class="pageimg" id="pageimg" alt="繪本故事插圖"><button class="arrow" id="next" onclick="turn(1)" aria-label="下一頁">›</button></div>
+ <div class="controls"><span class="count" id="count">第 1 / 20 頁</span><div class="bar"><i id="progress"></i></div><button class="control active" id="voiceBtn" onclick="toggleVoice()">🔊 旁白：開</button><button class="control" id="musicBtn" onclick="toggleMusic()">♫ 配樂：關</button></div>
+</div></div>
+<audio id="voice" preload="none"></audio><audio id="music" src="assets/music/伴奏.mp3.mp3" loop preload="none"></audio>
+<script>
+const TOTAL=20;let page=0,voiceOn=true,musicOn=false;
+const $=id=>document.getElementById(id);
+const grid=$('grid');
+for(let i=0;i<TOTAL;i++){const b=document.createElement('button');b.className='thumb';b.innerHTML=`<img src="assets/graphics/${i}.jpg" alt="故事第 ${i+1} 頁" loading="lazy"><span>第 ${i+1} 頁</span>`;b.onclick=()=>openBook(i);grid.appendChild(b);}
+function openBook(n){page=n;$('reader').classList.add('show');document.body.style.overflow='hidden';renderPage();if(musicOn)$('music').play().catch(()=>{});}
+function closeBook(){$('reader').classList.remove('show');document.body.style.overflow='';$('voice').pause();$('music').pause();}
+function turn(d){page=Math.max(0,Math.min(TOTAL-1,page+d));renderPage();}
+function renderPage(){
+ $('pageimg').src=`assets/graphics/${page}.jpg`;$('count').textContent=`第 ${page+1} / ${TOTAL} 頁`;$('progress').style.width=`${(page+1)/TOTAL*100}%`;
+ $('prev').disabled=page===0;$('next').disabled=page===TOTAL-1;
+ const v=$('voice');v.pause();v.src=`assets/speech/speech${page}.mp3`;v.currentTime=0;if(voiceOn)v.play().catch(()=>{});
+}
+function toggleVoice(){voiceOn=!voiceOn;$('voiceBtn').textContent=voiceOn?'🔊 旁白：開':'🔇 旁白：關';$('voiceBtn').classList.toggle('active',voiceOn);if(voiceOn){$('voice').play().catch(()=>{});}else{$('voice').pause();}}
+function toggleMusic(){musicOn=!musicOn;$('musicBtn').textContent=musicOn?'♫ 配樂：開':'♫ 配樂：關';$('musicBtn').classList.toggle('active',musicOn);if(musicOn)$('music').play().catch(()=>{});else $('music').pause();}
+document.addEventListener('keydown',e=>{if(!$('reader').classList.contains('show'))return;if(e.key==='ArrowRight')turn(1);if(e.key==='ArrowLeft')turn(-1);if(e.key==='Escape')closeBook();});
+$('reader').addEventListener('click',e=>{if(e.target===$('reader'))closeBook();});
+</script>
+</body></html>
